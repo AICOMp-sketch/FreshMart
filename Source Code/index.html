@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Your Neighborhood Supermarket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="sylesheet" href="styles.css"/>
+</head>
+<body class="bg-gray-50">
+    <!-- Header with Navigation -->
+    <header class="bg-green-600 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl font-bold">Fresh<span class="text-yellow-300">Mart</span></h1>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-yellow-300 transition">Home</a>
+                    <a href="#deals" class="hover:text-yellow-300 transition">Hot Deals</a>
+                    <a href="#products" class="hover:text-yellow-300 transition">Products</a>
+                    <a href="#about" class="hover:text-yellow-300 transition">About Us</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <button id="cart-button" class="cart-button bg-white text-green-600 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-green-500 px-4 py-2 hidden">
+            <a href="#" class="block py-2 hover:text-yellow-300">Home</a>
+            <a href="#deals" class="block py-2 hover:text-yellow-300">Hot Deals</a>
+            <a href="#products" class="block py-2 hover:text-yellow-300">Products</a>
+            <a href="#about" class="block py-2 hover:text-yellow-300">About Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e5d7955f-57c3-4aa4-8111-2d7b94aeb670.png" alt="Colorful fresh vegetables and fruits arranged in baskets at a modern supermarket aisle" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center">
+            <div class="container mx-auto px-4 text-white">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Fresh Groceries Delivered <br>To Your Doorstep</h2>
+                <p class="text-xl mb-6">Quality produce at affordable prices</p>
+                <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-yellow-500 transition">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="bg-white py-6 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto space-x-4 pb-2">
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-green-600 text-white">All Products</button>
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition">Fruits</button>
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition">Vegetables</button>
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition">Dairy</button>
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition">Meat</button>
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition">Bakery</button>
+                <button class="category-btn flex-shrink-0 px-4 py-2 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition">Beverages</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Deals -->
+    <section id="deals" class="py-12 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">🔥 Hot Deals This Week</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Deal 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative transition duration-300">
+                    <div class="discount-badge">30% OFF</div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c2492f22-f8df-431c-abe9-afdc4c6809ac.png" alt="Organic strawberries in a wooden crate with green leaf decorations" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Organic Strawberries</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(24)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through mr-2">$5.99</span>
+                                <span class="font-bold text-green-600">$4.19</span>
+                            </div>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Deal 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative transition duration-300">
+                    <div class="discount-badge">15% OFF</div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6bb8218-eae8-49a5-b6eb-f8bdeeba34dd.png" alt="Fresh avocados in a woven basket with a green background" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Fresh Avocados</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(18)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through mr-2">$1.99</span>
+                                <span class="font-bold text-green-600">$1.69</span>
+                            </div>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Deal 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative transition duration-300">
+                    <div class="discount-badge">25% OFF</div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e64bb85d-e2c5-44b2-bed8-92b16aa06adb.png" alt="Artisan sourdough bread on a wooden cutting board with flour dusting" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Artisan Sourdough</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(32)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through mr-2">$3.99</span>
+                                <span class="font-bold text-green-600">$2.99</span>
+                            </div>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Deal 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative transition duration-300">
+                    <div class="discount-badge">20% OFF</div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bcb15061-6f89-46a3-8a26-579a7ba5b5f1.png" alt="Grass-fed ground beef package with herbs decoration on a marble surface" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Grass-Fed Beef (1lb)</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(15)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through mr-2">$8.99</span>
+                                <span class="font-bold text-green-600">$7.19</span>
+                            </div>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">🥦 Our Fresh Produce</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c569844-a731-4075-a384-be721a5d0d20.png" alt="Crisp organic romaine lettuce with water droplets showing freshness" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Organic Romaine Lettuce</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(12)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-green-600">$2.49</span>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6f1c4b25-ba7b-40ae-9332-103c37e624e6.png" alt="Juicy ripe oranges piled in a pyramid with green leaves attached" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Fresh Oranges</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(20)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-green-600">$0.79</span>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7994d4f1-5bbb-4a42-85b1-72f6792efd23.png" alt="Organic free-range chicken eggs in a cardboard carton" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Free-Range Eggs (12pk)</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(35)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-green-600">$4.29</span>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bfaa50f6-902f-490c-95ec-501b50db5d5b.png" alt="Homemade almond milk in a glass bottle with almonds scattered around" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Almond Milk (32oz)</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(17)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-green-600">$3.99</span>
+                            <button class="add-to-cart bg-green-600 text-white px-3 py-1 rounded-full text-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-full transition">View All Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Get your groceries delivered to your doorstep in under 2 hours</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Quality Guarantee</h3>
+                    <p class="text-gray-600">We source only the freshest produce from trusted farmers</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Best Prices</h3>
+                    <p class="text-gray-600">Competitive prices with weekly deals and discounts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="absolute right-0 top-0 h-full w-full sm:w-96 bg-white shadow-lg overflow-y-auto">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h3 class="text-xl font-bold">Your Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="p-4">
+                <!-- Cart items will be added here -->
+                <div class="text-center py-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <p class="mt-4 text-gray-500">Your cart is empty</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex justify-between mb-4">
+                    <span class="font-bold">Subtotal</span>
+                    <span id="cart-total" class="font-bold">$0.00</span>
+                </div>
+                <button class="w-full bg-green-600 text-white py-3 rounded-md font-medium hover:bg-green-700 transition">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-xl mb-4">FreshMart</h3>
+                    <p class="text-gray-400">Your one-stop shop for fresh, quality groceries at affordable prices.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Return Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <address class="not-italic text-gray-400">
+                        123 Market Street<br>
+                        Foodville, CA 90210<br>
+                        <br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@freshmart.com
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023 FreshMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
